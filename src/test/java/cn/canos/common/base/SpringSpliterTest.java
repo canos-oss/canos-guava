@@ -28,4 +28,14 @@ public class SpringSpliterTest {
 
         assertArrayEquals(expected.toArray(new Integer[0]), actual.toArray(new Integer[0]));
     }
+
+    @Test
+    public void testParseIntegerList2() {
+        String text = "1,2,3,a";
+        List<Integer> expected = Lists.newArrayList(1, 2, 3);
+
+        List<Integer> actual = new SpringSpliter("[,;]").parseIntegerList(text);
+
+        assertArrayEquals(expected.toArray(new Integer[0]), actual.toArray(new Integer[0]));
+    }
 }
