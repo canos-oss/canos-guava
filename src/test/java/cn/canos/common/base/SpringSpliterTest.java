@@ -11,10 +11,10 @@ public class SpringSpliterTest {
 
     @Test
     public void parseIntegerList() {
-        String text = "1,2,3";
-        List<Integer> expected = Lists.newArrayList(1, 2, 3);
+        String text = "1,2,3,a";
+        List<Integer> expected = Lists.newArrayList(1, 2, 3, -1);
 
-        List<Integer> actual = new SpringSpliter().parseIntegerList(text);
+        List<Integer> actual = new SpringSpliter().parseIntegerList(text, new IntegerParser(-1));
 
         assertArrayEquals(expected.toArray(new Integer[0]), actual.toArray(new Integer[0]));
     }
