@@ -28,12 +28,28 @@ public class SpringSpliter {
         return parse(text, INTEGER_STRING_PARSER);
     }
 
+    public List<Integer> parseIntegerList(String text, Integer defaultValue) {
+        return parse(text, new IntegerParser(defaultValue));
+    }
+
+    public List<Integer> parseIntegerList(String text, IntegerParser parser) {
+        return parse(text, parser);
+    }
+
     public List<Integer> parseIntegerList(String text, IValueParser<Integer> parser) {
         return parse(text, parser);
     }
 
     public List<Long> parseLongList(String text) {
         return parse(text, LONG_STRING_PARSER);
+    }
+
+    public List<Long> parseLongList(String text, Long defaultValue) {
+        return parse(text, new LongParser(defaultValue));
+    }
+
+    public List<Long> parseLongList(String text, LongParser parser) {
+        return parse(text, parser);
     }
 
     public List<Long> parseLongList(String text, IValueParser<Long> parser) {
